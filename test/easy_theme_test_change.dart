@@ -10,20 +10,24 @@ void main() {
   testWidgets('change brightness', (WidgetTester tester) async {
     await tester.pumpWidget(MyApp());
 
-    MaterialApp app = find.byType(MaterialApp).evaluate().first.widget;
-    expect(app.theme.brightness, equals(Brightness.dark));
+    // ignore: avoid_as
+    MaterialApp app =
+        find.byType(MaterialApp).evaluate().first.widget as MaterialApp;
+    expect(app.theme?.brightness, equals(Brightness.dark));
 
     await tester.tap(find.byKey(key));
     await tester.pumpAndSettle();
 
-    app = find.byType(MaterialApp).evaluate().first.widget;
-    expect(app.theme.brightness, equals(Brightness.light));
+    // ignore: avoid_as
+    app = find.byType(MaterialApp).evaluate().first.widget as MaterialApp;
+    expect(app.theme?.brightness, equals(Brightness.light));
 
     await tester.tap(find.byKey(key));
     await tester.pumpAndSettle();
 
-    app = find.byType(MaterialApp).evaluate().first.widget;
-    expect(app.theme.brightness, equals(Brightness.dark));
+    // ignore: avoid_as
+    app = find.byType(MaterialApp).evaluate().first.widget as MaterialApp;
+    expect(app.theme?.brightness, equals(Brightness.dark));
   });
 }
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 ValueKey<String> key = const ValueKey<String>('ok');
-DynamicThemeState state;
+DynamicThemeState? state;
 GlobalKey<DynamicThemeState> easyThemeKey = GlobalKey<DynamicThemeState>();
 
 void main() {
